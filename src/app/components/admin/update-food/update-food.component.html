@@ -1,0 +1,42 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-8 offset-md-2"> <!-- Increased width and centered -->
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Update Food</mat-card-title>
+            </mat-card-header>
+  
+            <mat-card-content>
+              <form [formGroup]="foodForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Food Name</mat-label>
+                  <input matInput placeholder="food name" formControlName="name" />
+                </mat-form-field>
+  
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Description</mat-label>
+                  <input matInput placeholder="Placeholder" formControlName="description" />
+                </mat-form-field>
+  
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Price</mat-label>
+                  <input matInput placeholder="Placeholder" formControlName="price" />
+                </mat-form-field>
+  
+                <mat-form-field appearance="outline" class="full-width">
+                  <mat-label>Image</mat-label>
+                  <input matInput placeholder="Placeholder" formControlName="image" />
+                </mat-form-field>
+  
+                <button mat-raised-button color="primary" type="submit">
+                  Update Food
+                </button>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  

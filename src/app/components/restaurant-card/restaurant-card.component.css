@@ -1,0 +1,35 @@
+.restaurant-card {
+    position: relative;
+    max-width: 370px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .mat-card-image {
+    height: 150px;
+  }
+  .restaurant-image {
+    width: 100%; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the card */
+}
+  
+  
+  .mat-card-content {
+    overflow: auto; /* Add this to enable scrolling within the content area */
+  }
+  
+  .restaurant-name,
+  .categories {
+    width: 100%;
+  }
+  

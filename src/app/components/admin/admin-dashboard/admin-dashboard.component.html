@@ -1,0 +1,18 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <h1 class="text-center">Welcome to admin panel</h1>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let food of foodItems">
+          <div class="custom-card mb-4" (click)="onCardClick(food)">
+            <img [src]="food.image" alt="{{ food.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ food.name }}</h5>
+              <p class="card-text">{{ food.description }}</p>
+              <p class="card-price">TK {{ food.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

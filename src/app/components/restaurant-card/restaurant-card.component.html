@@ -1,0 +1,10 @@
+<!-- app-restaurant-card.component.html -->
+<div class="restaurant-card" (click)="navigateToRestaurantFoods(restaurant.id, restaurant.name)">
+  <mat-card>
+    <img mat-card-image class="restaurant-image" [src]="restaurant.image" alt="Restaurant Image">
+    <mat-card-content>
+      <h3 class="restaurant-name">{{ restaurant.name }}</h3>
+      <p class="categories">{{ restaurant.categories }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

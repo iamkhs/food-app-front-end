@@ -1,0 +1,30 @@
+<!-- Add this code above the restaurant cards -->
+<div class="search-container">
+  <div class="search-box">
+    <mat-form-field class="search-field">
+      <input [value]="addressName" matInput placeholder="Search Near Restaurants">
+      <button matSuffix mat-icon-button (click)="getLocation()">
+        <mat-icon class="gps-icon">gps_fixed</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+
+
+<div fxLayout="row wrap" fxLayoutGap="16px">
+  <div fxFlex.gt-md="calc(20% - 16px)" fxFlex.gt-xs="calc(50% - 16px)" fxFlex="100%" *ngFor="let restaurant of restaurants">
+    <app-restaurant-card class="app-restaurant-card" [restaurant]="restaurant"></app-restaurant-card>
+  </div>
+</div>
+
+<mat-paginator
+  [length]="totalElements"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 50]"
+  (page)="onPageChange($event)"
+></mat-paginator>
+
+
+
+
+

@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <a mat-icon [routerLink]="isLogin && userDto?.role === 'ADMIN' ? '/admin/dashboard' : '/'">
+    <mat-icon class="white-icon">home</mat-icon>
+    <span class="white-text">Home</span>
+  </a>
+
+  <span class="example-spacer"></span>
+  <ng-container *ngIf="userDto?.role !== 'ADMIN'">
+    <a mat-icon routerLink="/cart" (click)="toggleCart()">
+      <span
+        matBadge="{{ cartItemCount }}"
+        matBadgeColor="accent"
+        matBadgeSize="small"
+        matBadgeOverlap="false"
+      ></span>
+      <mat-icon class="white-icon">shopping_cart</mat-icon>
+      <span class="white-text">Cart</span>
+    </a>
+  </ng-container>
+
+  <!-- Conditionally display the "Admin Dashboard" link -->
+  <ng-container *ngIf="isLogin && userDto?.role === 'ADMIN'">
+    <a mat-icon routerLink="/admin/dashboard/management">
+      <mat-icon class="white-icon">dashboard</mat-icon>
+      <span class="white-text">Admin Dashboard</span>
+    </a>
+  </ng-container>
+
+  <a
+    mat-icon
+    (click)="isLogin ? logout() : navigateToSignUp()"
+    style="cursor: pointer"
+  >
+    <mat-icon class="white-icon">{{ isLogin ? "logout" : "login" }}</mat-icon>
+    <span class="white-text">{{ isLogin ? "Logout" : "Login" }}</span>
+  </a>
+</mat-toolbar>

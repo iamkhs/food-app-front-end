@@ -1,0 +1,17 @@
+.example-spacer{
+    flex: 1 1 auto;
+    
+}
+/* Your CSS file (e.g., styles.css) */
+.white-icon {
+    color: white;
+    vertical-align: middle;
+    margin-right: 4px; /* Adjust this value as needed for spacing */
+  }
+  
+  .white-text {
+    color: white;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  

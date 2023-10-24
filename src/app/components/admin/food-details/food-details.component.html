@@ -1,0 +1,16 @@
+<div class="container" *ngIf="food">
+  <div class="food-banner">
+    <img [src]="food.image" alt="{{ food.name }}" class="food-image">
+  </div>
+  <div class="food-details">
+    <h1 class="food-title">{{ food.name }}</h1>
+    <p class="food-description">{{ food.description }}</p>
+    <p class="food-price">Price: TK {{ food.price }}</p>
+    
+    <div class="food-actions">
+
+      <button mat-raised-button color="primary" (click)="updateFood()">Update</button>
+      <button mat-raised-button color="warn" (click)="deleteFood()">Delete</button>
+    </div>
+  </div>
+</div>
