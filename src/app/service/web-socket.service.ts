@@ -6,7 +6,8 @@ import * as Stomp from 'stompjs';
 })
 export class WebSocketService {
 
-  socket = new SockJS('http://localhost:8080/server');
+  // socket = new SockJS('http://localhost:8080/server');
+  socket = new SockJS('https://render-demo-sfui.onrender.com/server')
   stompClient = Stomp.over(this.socket);
 
   constructor(){

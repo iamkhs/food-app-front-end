@@ -44,9 +44,6 @@ export class CartComponent implements OnInit{
   calculateTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + item.item.price, 0);
   }
-  
-
-
 
   orderRequest(): void {
     // Create an array of objects with the required properties
