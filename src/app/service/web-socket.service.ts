@@ -6,7 +6,7 @@ import * as Stomp from 'stompjs';
 })
 export class WebSocketService {
 
-  socket = new SockJS('http://localhost:8080/server');
+  socket = new SockJS('https://localhost:8080/server');
   stompClient = Stomp.over(this.socket);
 
   constructor(){
@@ -18,7 +18,7 @@ export class WebSocketService {
     });
   }
 
-   send(data: any) {
+  send(data: any) {
     this.stompClient.send('/app/placeOrder', {}, JSON.stringify(data));
   }
 
