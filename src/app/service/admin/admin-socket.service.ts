@@ -8,7 +8,8 @@ import { OrderNotificationService } from './order-notification.service';
 })
 export class AdminSocketService {
 
-  socket = new SockJS('http://localhost:8080/server');
+  // socket = new SockJS('http://localhost:8080/server');
+  socket = new SockJS('https://render-demo-sfui.onrender.com/server')
   stompClient = Stomp.over(this.socket);
   orders: any[] = [];
   
