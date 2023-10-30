@@ -17,6 +17,10 @@ export class AdminService {
     return this.http.post(`${this.baseUrl}/foods/food-details`, requestBody);
   }
 
+  deleteFoodById(foodId:any){
+    return this.http.delete(`${this.baseUrl}/foods/delete/${foodId}`);
+  }
+
   updateFood(foodId: any, foodRequest: any) {
     return this.http.put(`${this.baseUrl}/foods/update/${foodId}`, foodRequest);
   }

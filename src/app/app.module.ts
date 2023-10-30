@@ -30,8 +30,10 @@ import { FoodDetailsComponent } from './components/admin/food-details/food-detai
 import { UpdateFoodComponent } from './components/admin/update-food/update-food.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { AddFoodComponent } from './components/admin/add-food/add-food.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
 
 @NgModule({
+  
   declarations: [
     AppComponent,
     DashboardComponent,
@@ -46,6 +48,7 @@ import { AddFoodComponent } from './components/admin/add-food/add-food.component
     UpdateFoodComponent,
     AdminProfileComponent,
     AddFoodComponent,
+    OrdersComponent,
     
   ],
   imports: [
@@ -71,15 +74,14 @@ import { AddFoodComponent } from './components/admin/add-food/add-food.component
 
     
   ],
+  
   providers: [
-    [
-      {
-        provide:HTTP_INTERCEPTORS,
-        useClass:JwtInterceptor,
-        multi:true
-      }
-    ],
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin/admin.service';
+import { OrdersComponent } from '../orders/orders.component';
+import { AdminSocketService } from 'src/app/service/admin/admin-socket.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -9,13 +11,14 @@ import { AdminService } from 'src/app/service/admin/admin.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor(private adminService: AdminService, private router : Router) {}
+  constructor(private socketSercice : AdminSocketService,  private adminService: AdminService, private router : Router) {}
 
   restuarants : any;
   foodItems : any;
   restuarantId:any;
 
   ngOnInit(): void {
+    
     // 1. Retrieve the userDto from localStorage
     const userDtoString = localStorage.getItem('userDto');
     let userId = ''

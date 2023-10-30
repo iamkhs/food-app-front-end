@@ -1,0 +1,25 @@
+<div>
+    <div class="container text-center">
+        <h2>Orders List</h2>
+        <button mat-raised-button color="warn" style="margin-right: 10px;">Pending Orders</button>
+        <button mat-raised-button color="primary">Accepted Orders</button>
+    </div>
+    <div class="order-card" *ngFor="let order of orders">
+      <div class="order-details">
+        <strong>Food ID:</strong> {{ order.id }}<br>
+        <strong>Name:</strong> {{ order.name }}<br>
+        <strong>Price:</strong> TK {{ order.price }}<br>
+        <div class="container text-center">
+          <h3>Customer Details</h3> 
+          <strong>Name :</strong> {{ order.userDto.name }}<br>
+          <strong>Phone:</strong> {{ order.userDto.phone }}<br>
+          <strong>Address:</strong> {{ order.userDto.address }}<br>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" (click)="acceptOrder(order)">Accept</button>
+        <button mat-raised-button color="warn" (click)="declineOrder(order)">Decline</button>
+      </div>
+    </div>
+  </div>
+  

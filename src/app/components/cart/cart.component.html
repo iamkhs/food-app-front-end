@@ -6,8 +6,8 @@
         <mat-list-item *ngFor="let item of cartItems; let i = index">
           <!-- Display cart item details here -->
           <div fxLayout="row" fxLayoutAlign="space-between center">
-            <span>{{ item.name }}</span>
-            <span>{{ item.price }} TK</span>
+            <span>{{ item.item.name }}</span>
+            <span>{{ item.item.price }} TK</span>
             <button mat-icon-button (click)="removeFromCart(i)">
               <mat-icon>delete</mat-icon>
             </button>
@@ -17,9 +17,8 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <span>Total:</span>
         <span>{{ calculateTotalPrice() }} TK</span>
-        <button mat-raised-button color="accent" (click)="closeCart()">Place Order</button>
+        <button mat-raised-button color="accent" (click)="orderRequest()">Place Order</button>
       </div>
-
     </div>
   </mat-card>
 </div>

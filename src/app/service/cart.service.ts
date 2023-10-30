@@ -1,24 +1,30 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
+
+  private baseUrl = 'http://localhost:8080/food-app/api'
   private cartItems: any[] = [];
   private cartItemCountSubject = new BehaviorSubject<number>(0);
 
   cartItemCount$ = this.cartItemCountSubject.asObservable();
 
-  constructor() {
+  constructor(private http : HttpClient) {
     // Initialize cartItems from localStorage when the service is constructed
     const storedCartItems = JSON.parse(localStorage.getItem('cart') || '[]');
     this.cartItems = storedCartItems;
     this.updateCartItemCount();
   }
 
-  addToCart(item: any): void {
-    this.cartItems.push(item);
+  addToCart(item: any, restaurantId:any): void {
+    const cartItem = { item, restaurantId };
+    // Push the cartItem into the cartItems array
+    this.cartItems.push(cartItem);
+    
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
     this.updateCartItemCount();
   }
@@ -39,5 +45,10 @@ export class CartService {
 
   private updateCartItemCount(): void {
     this.cartItemCountSubject.next(this.cartItems.length);
+  }
+
+
+  placeOrder(orders: any[]): Observable<any> { // Use 'any[]' for the parameter
+    return this.http.post(`${this.baseUrl}/place-order`, orders);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderNotificationService } from 'src/app/service/admin/order-notification.service';
 import { CartService } from 'src/app/service/cart.service';
 import { LoginService } from 'src/app/service/login.service';
 
@@ -13,8 +14,12 @@ export class NavbarComponent implements OnInit {
   cartItemCount: number = 0;
   isLogin = false;
   userDto: any;
+  
+  orderNotificationService: any;
 
-  constructor(private router: Router, private cartService: CartService, private loginService: LoginService) {}
+  constructor(private router: Router, private cartService: CartService, private loginService: LoginService, orderNoty : OrderNotificationService) {
+    this.orderNotificationService = orderNoty.hasNewOrders$;
+  }
 
   ngOnInit(): void {
     this.cartService.cartItemCount$.subscribe((count) => {

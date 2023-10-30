@@ -11,6 +11,7 @@ import { FoodDetailsComponent } from './components/admin/food-details/food-detai
 import { UpdateFoodComponent } from './components/admin/update-food/update-food.component';
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { AddFoodComponent } from './components/admin/add-food/add-food.component';
+import { OrdersComponent } from './components/admin/orders/orders.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
+  {
+    path:'admin/dashboard/orders',
+    component:OrdersComponent,
+    pathMatch:'full',
+    canActivate: [AuthGuard]
+  },
 
   {
     path:'admin/dashboard/food/add',

@@ -17,16 +17,17 @@ export class RestaurantFoodsComponent implements OnInit{
     private _snackBar: MatSnackBar) {}
   
   foods:any;
+  restaurantId:any;
   
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      const restaurantId = params['restaurantId'];
+      this.restaurantId = params['restaurantId'];
       
       // Now, you can use the restaurantId in your component logic
-      console.log('Restaurant ID:', restaurantId);
+      console.log('Restaurant ID:', this.restaurantId);
       
       // You can also fetch restaurant-specific data using the restaurantId
-      this.homeService.getFoodsByRestaurant(restaurantId).subscribe(
+      this.homeService.getFoodsByRestaurant(this.restaurantId).subscribe(
         (data) => {
           this.foods = data;
           console.log('Restaurant Data:', this.foods);
@@ -39,7 +40,7 @@ export class RestaurantFoodsComponent implements OnInit{
   }
 
   addToCart(food: any) {
-    this.cartService.addToCart(food);
+    this.cartService.addToCart(food, this.restaurantId);
     this._snackBar.open("Item successfully added to your cart.", "OK", {
       duration: 2000 // Set the duration in milliseconds
     });

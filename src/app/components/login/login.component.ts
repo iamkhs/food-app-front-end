@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/service/login.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -40,7 +41,19 @@ export class LoginComponent {
           } else {
             window.location.href = '/';
           }
-        });
+        },
+        (error)=>{
+          console.log(error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Something went wrong!'
+          });
+          
+        }
+        
+        
+        );
     }
   }
 }

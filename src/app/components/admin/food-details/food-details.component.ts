@@ -44,7 +44,16 @@ export class FoodDetailsComponent implements OnInit {
   }
 
   deleteFood() {
-    console.log('delete method click');
+    this.adminService.deleteFoodById(this.foodId).subscribe(
+      (data)=>{
+        console.log('Delete successful:', data);
+        this.router.navigate(['/admin/dashboard']);
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
   }
 
   updateFood() {

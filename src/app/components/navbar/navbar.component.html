@@ -26,6 +26,14 @@
     </a>
   </ng-container>
 
+  <ng-container *ngIf="isLogin && userDto?.role === 'ADMIN'">
+    <a mat-icon routerLink="/admin/dashboard/orders">
+      <span class="white-text">Orders</span>
+      <span class="new-orders-dot" *ngIf="(orderNotificationService.hasNewOrders$ | async)">•</span>
+
+    </a>
+  </ng-container>
+
   <a
     mat-icon
     (click)="isLogin ? logout() : navigateToSignUp()"
