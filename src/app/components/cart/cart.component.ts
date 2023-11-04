@@ -47,8 +47,9 @@ export class CartComponent implements OnInit{
   orderRequest(): void {
     // Create an array of objects with the required properties
     const orders = this.cartItems.map(item => ({
-      id: item.item.id.toString(),   // Convert id to string if needed
+      id: item.item.id,   // Convert id to string if needed
       name: item.item.name,
+      description: item.item.description,
       price: item.item.price,
       restaurantId: item.restaurantId,
       userDto: JSON.parse(this.userDTO)

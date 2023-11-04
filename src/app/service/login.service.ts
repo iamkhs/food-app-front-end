@@ -6,8 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  private baseUrl = "http://localhost:8080/food-app/api/auth";
-  
+  private baseUrl = "https://app-fooddelivery-231104021518.azurewebsites.net/food-app/api/auth";
+    // private baseUrl = 'http://localhost:8080/food-app/api/auth'
+
   constructor(private http : HttpClient) { }
 
   loginUser(token:any){

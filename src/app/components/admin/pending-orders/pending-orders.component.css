@@ -1,0 +1,27 @@
+.order-card {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #ccc;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .order-details {
+    flex: 1;
+  }
+  
+  .action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+
+  .customer-details{
+    margin: 0;
+  }

@@ -9,7 +9,7 @@ import { OrderNotificationService } from './order-notification.service';
 export class AdminSocketService {
 
   // socket = new SockJS('http://localhost:8080/server');
-  socket = new SockJS('https://render-demo-sfui.onrender.com/server')
+  socket = new SockJS('https://app-fooddelivery-231104021518.azurewebsites.net/server')
   stompClient = Stomp.over(this.socket);
   orders: any[] = [];
   

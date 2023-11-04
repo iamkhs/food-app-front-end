@@ -31,6 +31,7 @@ import { UpdateFoodComponent } from './components/admin/update-food/update-food.
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { AddFoodComponent } from './components/admin/add-food/add-food.component';
 import { OrdersComponent } from './components/admin/orders/orders.component';
+import { PendingOrdersComponent } from './components/admin/pending-orders/pending-orders.component';
 
 @NgModule({
   
@@ -49,6 +50,7 @@ import { OrdersComponent } from './components/admin/orders/orders.component';
     AdminProfileComponent,
     AddFoodComponent,
     OrdersComponent,
+    PendingOrdersComponent,
     
   ],
   imports: [

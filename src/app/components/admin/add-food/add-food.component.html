@@ -17,6 +17,7 @@
                   placeholder="Food name"
                   [(ngModel)]="foodRequest.name"
                   name="foodName"
+                  required
                 />
               </mat-form-field>
 
@@ -27,6 +28,7 @@
                   placeholder="Description"
                   [(ngModel)]="foodRequest.description"
                   name="description"
+                  required
                 />
               </mat-form-field>
 
@@ -37,18 +39,16 @@
                   placeholder="Price"
                   [(ngModel)]="foodRequest.price"
                   name="price"
+                  required
                 />
               </mat-form-field>
 
-              <mat-form-field appearance="outline" class="full-width">
-                <mat-label>Image</mat-label>
-                <input
-                  matInput
-                  placeholder="Image"
-                  [(ngModel)]="foodRequest.image"
-                  name="image"
-                />
-              </mat-form-field>
+              <div class="full-width">
+                <label for="fileInput">Food Image</label>
+                <input class="custom-file-btn" id="fileInput" 
+                required
+                type="file" (change)="onFileSelected($event)" />
+              </div>
 
               <button mat-raised-button color="primary" type="submit">
                 Add Food

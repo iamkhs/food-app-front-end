@@ -7,7 +7,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class CartService {
 
-  private baseUrl = 'http://localhost:8080/food-app/api'
+  private baseUrl = 'https://app-fooddelivery-231104021518.azurewebsites.net/food-app/api'
+    // private baseUrl = 'http://localhost:8080/food-app/api'
+
+  
   private cartItems: any[] = [];
   private cartItemCountSubject = new BehaviorSubject<number>(0);
 

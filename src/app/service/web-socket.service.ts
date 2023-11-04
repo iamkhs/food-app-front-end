@@ -7,7 +7,7 @@ import * as Stomp from 'stompjs';
 export class WebSocketService {
 
   // socket = new SockJS('http://localhost:8080/server');
-  socket = new SockJS('https://render-demo-sfui.onrender.com/server')
+  socket = new SockJS('https://app-fooddelivery-231104021518.azurewebsites.net/server')
   stompClient = Stomp.over(this.socket);
 
   constructor(){

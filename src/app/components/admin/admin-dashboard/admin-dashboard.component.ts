@@ -38,6 +38,8 @@ export class AdminDashboardComponent implements OnInit {
         this.foodItems = data.foodMenuList;
         console.log(this.foodItems);
         this.restuarantId = data.id;
+        console.log(this.restuarantId);
+        
         localStorage.setItem("restaurantId", this.restuarantId)
         
       },

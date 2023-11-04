@@ -12,6 +12,7 @@ import { UpdateFoodComponent } from './components/admin/update-food/update-food.
 import { AdminProfileComponent } from './components/admin/admin-profile/admin-profile.component';
 import { AddFoodComponent } from './components/admin/add-food/add-food.component';
 import { OrdersComponent } from './components/admin/orders/orders.component';
+import { PendingOrdersComponent } from './components/admin/pending-orders/pending-orders.component';
 
 const routes: Routes = [
   {
@@ -90,6 +91,13 @@ const routes: Routes = [
     pathMatch:'full',
     canActivate:[AuthGuard]
   },
+
+  {
+    path:'admin/dashboard/orders/pending-orders',
+    component:PendingOrdersComponent,
+    pathMatch:'full',
+    canActivate:[AuthGuard]
+  }
 
 
   

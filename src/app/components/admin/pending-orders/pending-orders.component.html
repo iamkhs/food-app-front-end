@@ -1,12 +1,11 @@
+<div class="container text-center">
+    <h2>Pending Orders</h2>
+</div>
 <div>
-    <div class="container text-center">
-        <h2>Orders List</h2>
-        <button mat-raised-button color="warn" (click)="pendinOrder()" style="margin-right: 10px;">Pending Orders</button>
-        <button mat-raised-button color="primary">Accepted Orders</button>
-    </div>
     <div class="order-card" *ngFor="let order of orders">
       <div class="order-details">
-        <strong>Food ID:</strong> {{ order.id }}<br>
+        <strong>Order ID:</strong> {{ order.orderId }}<br>
+        <strong>Food ID:</strong> {{ order.foodId }}<br>
         <strong>Name:</strong> {{ order.name }}<br>
         <strong>Price:</strong> TK {{ order.price }}<br>
         <div class="container text-center">
@@ -23,3 +22,4 @@
     </div>
   </div>
   
+

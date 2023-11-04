@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AdminService {
-  private baseUrl = 'http://localhost:8080/food-app/api/users/admin';
+  // private baseUrl = 'http://localhost:8080/food-app/api/users/admin';
+  private baseUrl = 'https://app-fooddelivery-231104021518.azurewebsites.net/food-app/api/users/admin';
   constructor(private http: HttpClient) {}
 
   getRestaurant(userId: any) {
@@ -25,14 +26,9 @@ export class AdminService {
     return this.http.put(`${this.baseUrl}/foods/update/${foodId}`, foodRequest);
   }
 
-  addNewFood(food: any, restaurantId: any) {
+  addNewFood(food: any) {
     // Include restaurantId as a query parameter
-    const queryParams = { restaurantId: restaurantId };
 
-    const options = {
-      params: new HttpParams({ fromObject: queryParams }),
-    };
-
-    return this.http.post(`${this.baseUrl}/foods/add-food`, food, options);
+    return this.http.post(`${this.baseUrl}/foods/add-food`, food);
   }
 }
