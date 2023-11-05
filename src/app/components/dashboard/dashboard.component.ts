@@ -20,7 +20,7 @@ export interface RestaurantResponse {
 export class DashboardComponent implements OnInit {
   restaurants: any;
   pageNumber: number = 0;
-  pageSize: number = 5;
+  pageSize: number = 10;
   totalElements: number = 0;
   constructor(private homeService: HomeService, private router: Router) {}
 
