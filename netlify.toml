@@ -1,6 +1,8 @@
 [build]
   publish = "dist/food-delivery"
   command = "ng build"
+  [build.bundle]
+    max_size = 2000000
 [[redirects]]
   from = "/*"
   to = "/index.html"
