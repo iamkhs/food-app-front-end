@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
   // private baseUrl = 'http://localhost:8080/food-app/api/users/admin';
-  private baseUrl = 'https://app-fooddelivery-231104021518.azurewebsites.net/food-app/api/users/admin';
+  private baseUrl = 'https://app-fooddelivery-backend.azurewebsites.net/food-app/api/users/admin';
   constructor(private http: HttpClient) {}
 
   getRestaurant(userId: any) {

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HomeService {
-  private baseUrl = 'https://app-fooddelivery-231104021518.azurewebsites.net/food-app/api'
+  private baseUrl = 'https://app-fooddelivery-backend.azurewebsites.net/food-app/api'
   // private baseUrl = 'http://localhost:8080/food-app/api'
 
   constructor(private http:HttpClient) { }

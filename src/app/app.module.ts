@@ -32,6 +32,7 @@ import { AdminProfileComponent } from './components/admin/admin-profile/admin-pr
 import { AddFoodComponent } from './components/admin/add-food/add-food.component';
 import { OrdersComponent } from './components/admin/orders/orders.component';
 import { PendingOrdersComponent } from './components/admin/pending-orders/pending-orders.component';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
 
 @NgModule({
   
@@ -71,6 +72,12 @@ import { PendingOrdersComponent } from './components/admin/pending-orders/pendin
     MatSnackBarModule,
     MatBadgeModule,
     MatPaginatorModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot(
+      {
+        showForeground:true
+      }
+    ) // import NgxUiLoaderHttpModule. By default, it will show background loader.
 
 
 
