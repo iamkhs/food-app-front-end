@@ -35,4 +35,13 @@ export class LoginService {
     else return true;
   }
 
+  getUserRole(): string {
+    const userDtoString = localStorage.getItem('userDto');
+    if (userDtoString) {
+      const userDto = JSON.parse(userDtoString);
+      return userDto.role;
+    }
+    return "";
+  }
+
 }

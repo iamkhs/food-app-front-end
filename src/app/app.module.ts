@@ -33,6 +33,7 @@ import { AddFoodComponent } from './components/admin/add-food/add-food.component
 import { OrdersComponent } from './components/admin/orders/orders.component';
 import { PendingOrdersComponent } from './components/admin/pending-orders/pending-orders.component';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
+import { SuccessMessageComponent } from './components/success-message/success-message.component';
 
 @NgModule({
   
@@ -52,6 +53,7 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from "ngx-ui-loader";
     AddFoodComponent,
     OrdersComponent,
     PendingOrdersComponent,
+    SuccessMessageComponent,
     
   ],
   imports: [

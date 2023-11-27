@@ -36,10 +36,10 @@ export class SignupComponent {
           Swal.fire({
               icon: 'success',
               title: 'Registration Successful',
-              text: 'You have successfully registered!'
+              text: 'You have successfully registered! Check Your email for verification'
             });
 
-            this.router.navigate(['/']);
+            this.router.navigate(['/verify']);
   
         },
         (error) => {
